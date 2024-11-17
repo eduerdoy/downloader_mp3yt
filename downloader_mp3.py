@@ -1,7 +1,7 @@
 import yt_dlp
 import os 
 
-def download_mp3(link, caminho = 'C:\\Users\\figue\\OneDrive\\Área de Trabalho\\dowloader_ytformp3\\music'):
+def download_mp3(link, caminho = 'C:\\downloader_mp3yt\\music'):
     # Configurações para baixar e converter diretamente para MP3
     ydl_opts = {
         'format': 'bestaudio/best',
