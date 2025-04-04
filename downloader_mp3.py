@@ -1,7 +1,15 @@
 import yt_dlp
+import tkinter as tk
+from tkinter import filedialog
 import os 
 
-def download_mp3(link, caminho = 'C:\\Users\\Walter\\Desktop\\music'):
+def escolher_pasta():
+    root = tk.Tk()
+    root.withdraw()
+    pasta = filedialog.askdirectory(title="Salvar como")
+    return pasta if pasta else os.getcwd()
+
+def download_mp3(link, caminho = escolher_pasta()):
     # Configurações para baixar e converter diretamente para MP3
     ydl_opts = {
         'format': 'bestaudio/best',
@@ -10,6 +18,7 @@ def download_mp3(link, caminho = 'C:\\Users\\Walter\\Desktop\\music'):
             'preferredcodec': 'mp3',
             'preferredquality': '192',
         }],
+        'ffmpeg_location': 'C:\\Users\\eduardo correa\\AppData\\Local\\ffmpeg\\bin',
         'outtmpl': f'{caminho}/%(title)s.%(ext)s',
         'quiet': False,  # Exibe o progresso
     }
