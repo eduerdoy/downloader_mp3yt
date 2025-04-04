@@ -6,4 +6,4 @@ Dependências:
 
 yt_dlp: pip install yt-dlp
 
-ffmpeg: Procure o site e baixe para o seu sistema
+ffmpeg: Baixe o .zip para o seu sistema no site oficial e acrescente a pasta "bin" ao path do sistema
